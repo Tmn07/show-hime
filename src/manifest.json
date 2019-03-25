@@ -11,7 +11,7 @@
     	"scripts" : ["js/bg.js"]
  	},
     "permissions": [
-        "tabs", "http://*/*", "https://*/*"
+        "tabs", "http://*/*", "https://*/*", "file:///*/*"
     ],
 	"content_scripts": 
     [
