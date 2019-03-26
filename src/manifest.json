@@ -11,8 +11,13 @@
     	"scripts" : ["js/bg.js"]
  	},
     "permissions": [
-        "tabs", "http://*/*", "https://*/*", "file:///*/*"
+        "contextMenus", "tabs", "http://*/*", "https://*/*", "file:///*/*"
     ],
+    "icons": {
+          "16": "hime1.png",
+          "48": "hime1.png",
+          "128": "hime1.png"
+        },
 	"content_scripts": 
     [
         {

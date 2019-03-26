@@ -3,8 +3,10 @@ $(function() {
 	// img_url = "http://pnq3l7twf.bkt.clouddn.com/hime";
 	$("body").append("<div id='hime07' style='background-repeat:no-repeat;\
 					background-size:100% 100%;-moz-background-size:100% 100%;\
-					display: block;position: fixed;right: 0px;top: 0px;height: 80px;\
-					width: 80px; z-index: 9999999999'></div>");
+					display: block;position: fixed;right: 0px;top: 0px;height:\
+					80px; width: 80px; z-index: 9999999999'> \
+					<audio id='myaudio'src='http://pnq3l7twf.bkt.clouddn.com/ho-test.mp3' hidden='true'></audio>\
+					</div>");
 	if (Math.random()>0.5) {
 		$("#hime07").css('background-image', "url('"+img_url+"1.png')");
 	}
