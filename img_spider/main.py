@@ -15,7 +15,9 @@ result_dict = {}
 new_img = []
 save_dir = "data/"
 
-
+name_list = {}
+for i, idol in enumerate(res):
+    name_list[i] = idol.text
 # 保存idol 名字信息到name.json
 def output_nameinfo():
     name_list = {}
@@ -41,7 +43,6 @@ def img_exist(filename):
 
 imghome_url = "http://imas.gamedbs.jp/mlth/chara/show/"
 for num in range(1,56):
-# for num in range(1,3):
     print("now loading No.%s idol"%num)
     url = imghome_url+str(num)
     r = requests.get(url)
@@ -80,10 +81,11 @@ for num in range(1,56):
                     new_img.append(filename)
             else:
                 print("pass No.%d pic" %(i))
-    # result_dict[num] = [name_list[num], i]
+        i += 1
+    result_dict[num] = [name_list[num-1], i]
 
-# with open('info.json','w') as f:
-#     json.dump(result_dict, f)
+with open('info.json','w') as f:
+    json.dump(result_dict, f)
 
 
 
