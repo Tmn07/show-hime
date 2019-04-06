@@ -2,14 +2,12 @@
     "manifest_version": 2,
 	"name": "show まつり",
 	"version": "1.0",
-	"description": "display hime in every page",
+	"description": "display hime and her friends in every page",
 	"browser_action": {
 		"default_icon": "hime1.png",
 		"default_title": "まつり!"
 	},
 	"background" : {
-        // "page": "js/bg.html"
-        // ,
     	"scripts" : ["js/bg.js"]
  	},
     "permissions": [
@@ -24,12 +22,9 @@
     [
         {
             "matches": ["<all_urls>"],
-            // 多个JS按顺序注入
             "js": ["js/jquery.min.js", "js/show.js"],
-            // "js": ["show.js"],
-            // 代码注入的时间，可选值： "document_start", "document_end", or "document_idle"，最后一个表示页面空闲时，默认document_idle
             "run_at": "document_start"
         }
     ],
-    "options_page": "js/option.html"
+    "options_page": "option/index.html"
 }

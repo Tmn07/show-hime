@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>设置页面</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="buttons-min.css">
+  <style type="text/css">
+  	/*li{margin:0; padding:0; list-sytle:none}*/
+  	.hvr-grow{
+  		display: inline-block;
+  		text-align: center;
+  		padding: 10px;
+  		height: 110px;
+  		width: 110px;
+  	}
+  	.icon_img{
+  		background-size: 100% auto;height: 100px;width: 100px;display: inline-block;
+        background-repeat: no-repeat;
+  	}
+  	.pure-button-primary
+  	{
+    	border-radius: 4px;
+    	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  	}
+
+  	.button-success,
+    .button-error,
+    .button-warning,
+    .button-secondary {
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-success {
+        background: rgb(28, 184, 65); /* this is a green */
+    }
+
+    .button-error {
+        background: rgb(202, 60, 60); /* this is a maroon */
+    }
+
+    .button-warning {
+        background: rgb(223, 117, 20); /* this is an orange */
+    }
+
+    .button-secondary {
+        background: rgb(66, 184, 221); /* this is a light blue */
+    }
+
+  </style>
+</head>
+<body>
+  <script type="text/javascript" src="../js/jquery.min.js"></script>
+  <h1>选择你要显示的偶像</h1>
+  <button id="save_btn" class="pure-button pure-button-primary">保存</button>
+  <button id="all_btn" class="pure-button button-success">全选</button>
+  <button id="clr_btn" class="pure-button button-warning">清空</button>
+  <div id="main">
+    
+
+  </div>
+
+  <script type="text/javascript" src="option.js"></script>
+</body>
+</html>

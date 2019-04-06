@@ -1,12 +1,12 @@
 chrome.contextMenus.create({
     title: "まつり!",
     onclick: function(){
-      // alert('您点击了右键菜单！');
       // chrome.tabs.executeScript({
       //   code: "document.getElementById('myaudio').play()"
       // });
-      // 如何获取id，是否会变？
-      window.open("chrome-extension://fcioccdohjkoibcgmkbfabbkcbcfjhim/js/option.html", "_blank");
+      // 获取id
+      // var myid = chrome.runtime.id;
+      chrome.tabs.create({url: "option/index.html"});
     }
 });
 
