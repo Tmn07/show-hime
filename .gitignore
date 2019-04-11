@@ -1,4 +1,15 @@
 *test.html
 *test.mp3
-*.png
+
 *.json
+
+
+# spider data
+img_spider/data/*
+
+
+# 审核相关
+chrome/*
+*.pem
+*.crx
+*.zip
