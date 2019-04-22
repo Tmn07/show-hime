@@ -18,11 +18,12 @@ save_dir = "data/"
 name_list = {}
 for i, idol in enumerate(res):
     name_list[i] = idol.text
+    
 # 保存idol 名字信息到name.json
 def output_nameinfo():
     name_list = {}
     for i, idol in enumerate(res):
-        name_list[i] = idol.text
+        name_list[i-1] = idol.text
     with open('name.json', 'w') as f:
         json.dump(name_list, f)
 

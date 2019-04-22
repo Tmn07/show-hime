@@ -6,7 +6,7 @@
 
 # spider data
 img_spider/data/*
-
+img_spider/3dimg/*
 
 # 审核相关
 chrome/*
