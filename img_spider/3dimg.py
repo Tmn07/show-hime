@@ -69,6 +69,6 @@ def get_idol_3dimg(idol_num):
 
 
 
-for num in range(4,56):
+for num in range(1,56):
 	print("now loading No.%s idol"%num)
 	get_idol_3dimg(num)
