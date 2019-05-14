@@ -40,6 +40,8 @@
 
 ## 小记
 
+2019/05/14版本，增加的触屏事件，封装隐藏了console.log，追加偶像图片。
+
 写挪动相关的事件时，遇到了一个坑，img标签的mouseup事件的因为图片本身的特性，有时候无法触发。使用div标签来代替。
 
 我这里挪动的实现，就是mousedown添加一个mousemove的监听，然后mouseup移除这个监听 我是参考[这个](https://stackoverflow.com/questions/33948464/move-an-image-with-javascript-using-mouse-events)改的
