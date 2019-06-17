@@ -31,19 +31,19 @@
 
 ## TODO
 
-- [ ] 触屏事件挪动
 - [ ] 音效用法？
 - [ ] 同步旧页面？（例如position
-- [x] 美化完善后台选项页面
-- [x] 封装/发布插件（正在审核
-- [x] 重构爬虫代码
+- [ ] github https?
 
 ## 小记
 
 2019/05/14版本，增加的触屏事件，封装隐藏了console.log，追加偶像图片。
+
+2019/06/17版本，追加偶像图片，屏蔽github.com。
 
 写挪动相关的事件时，遇到了一个坑，img标签的mouseup事件的因为图片本身的特性，有时候无法触发。使用div标签来代替。
 
 我这里挪动的实现，就是mousedown添加一个mousemove的监听，然后mouseup移除这个监听 我是参考[这个](https://stackoverflow.com/questions/33948464/move-an-image-with-javascript-using-mouse-events)改的
 
 PS：chrome ext真的好难调试啊（是我太蠢了（上一个坑还没填完，这里又开始放卫星了
+

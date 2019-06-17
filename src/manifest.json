@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
 	"name": "show まつり",
-	"version": "1.1",
+	"version": "1.1.1",
 	"description": "display hime and her friends in every page",
 	"browser_action": {
 		"default_icon": "hime1.png",
@@ -22,6 +22,7 @@
     [
         {
             "matches": ["<all_urls>"],
+            "exclude_matches": ["*://github.com/*"],
             "js": ["js/jquery.min.js", "js/show.js"],
             "run_at": "document_start"
         }
