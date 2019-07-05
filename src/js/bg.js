@@ -1,3 +1,4 @@
+// 右键菜单
 chrome.contextMenus.create({
     title: "まつり!",
     onclick: function(){
@@ -10,10 +11,10 @@ chrome.contextMenus.create({
     }
 });
 
-var clicked = 0;
+
 var show_flag = true;
 var position ="right: 0px;top: 0px;";
-chrome.runtime.onMessage.addListener(function (request,sender,callback) {
+chrome.runtime.onMessage.addListener(function (request, sender, callback) {
   cbk_obj = {}
   if (request.hasOwnProperty("position")) {
     if (request.position=="what"){
@@ -49,7 +50,6 @@ chrome.runtime.onMessage.addListener(function (request,sender,callback) {
     }
   }
   callback(cbk_obj);
-
 });
 
 chrome.browserAction.onClicked.addListener(function(tab) {
