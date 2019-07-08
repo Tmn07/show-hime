@@ -7,9 +7,11 @@
 # spider data
 img_spider/data/*
 img_spider/3dimg/*
-
+img_spider/test/*
 # 审核相关
 chrome/*
 *.pem
 *.crx
 *.zip
+
+.idea/*

@@ -11,7 +11,7 @@ function checkbox_init(val, name, check_status=false){
                 background-image: url(../data/'+(parseInt(val)+1)+'-0.png);">\
                 </div>\
                 <br>\
-                <input class="idol" type="checkbox" name="idol">'+name+'\
+                <input class="idol" iid="'+ val +'" type="checkbox" name="idol">'+name+'\
             </label>\
         </div>';
 
@@ -26,7 +26,12 @@ chrome.storage.local.get({list:[]}, function(data){
     }
     // 如何优雅的添加checked checkbox?
     for (var i in show_list){
-        $("input.idol")[show_list[i]].click();
+        if (show_list[i]==54) {
+            $("input.idol")[52].click();
+        }
+        else{
+            $("input.idol")[show_list[i]].click();
+        }
     }
     
 })
@@ -38,7 +43,7 @@ $("#save_btn").click(function(){
     lens = $("input.idol").length
     for (var idolid=0; idolid<lens; idolid++){
         if (idols[idolid].checked){
-            show_list.push(idolid);
+            show_list.push(parseInt($(idols[idolid]).attr('iid')));
         }
     }
     console.log(show_list);
