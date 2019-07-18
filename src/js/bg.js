@@ -22,8 +22,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, callback) {
       cbk_obj["position"] = position;
     }
     if (request.position=="set") {
-      left_var = request.X-30;
-      top_var = request.Y-30;
+      left_var = request.X-40;
+      top_var = request.Y-60;
       position = "left:" + left_var + "px;top:" + top_var + "px;"
       // callback["msg"]
       callback("set position at "+position);

@@ -23,6 +23,17 @@
 |- chrome 审核相关的资料
 |- img readme相关图片
 
+## 图片命名规则
+
+00	39人MTG服装
+0	BNT
+1	UNION
+2	Flyers
+10	拉面
+11	罗森
+12	绿色?
+22	TOP
+gif	2nd彩蛋
 
 ## BUG
 

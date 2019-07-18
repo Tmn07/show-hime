@@ -8,6 +8,8 @@
 img_spider/data/*
 img_spider/3dimg/*
 img_spider/test/*
+img_spider/2ndgif/*
+img_spider/loading/*
 # 审核相关
 chrome/*
 *.pem
