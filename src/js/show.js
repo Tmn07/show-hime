@@ -38,11 +38,12 @@ $(function() {
         consolog(picid);
         picid = info[idolid][1][picid]
         consolog(picid);
+        // 2nd tests
+        // picid = "2";
         if (picid == "00") {
             height = 90;
         }
-        // 2nd tests
-        // picid = "2";
+        
 
         // 获取showflag，position，注入元素
         chrome.runtime.sendMessage({show:"what", position:"what"},function (response) {
@@ -67,7 +68,7 @@ $(function() {
                 $(this).remove(); // prevent memory leaks as @benweet suggested
                 if (picid==2){
                     gif = idolid + "-" + picid + ".gif"
-                    $('<img/>').attr('src', "http://tmn07.com/load/"+ gif).load(function(){
+                    $('<img/>').attr('src', "http://tmn07.com/loadme/"+ gif).load(function(){
                         $(this).remove();
                     });
                 }
@@ -98,10 +99,10 @@ $(function() {
             // touch move event
             function initialClick_T(e) {
                 image = this;
-                if (picid==2 && idolid!=24 && idolid!=27)
+                if (picid==2)
                 {
                     gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(http://tmn07.com/load/"+ gif +")");
+                    $(this).css("background-image","url(http://tmn07.com/loadme/"+ gif +")");
                 }
                 document.addEventListener("touchmove", move_T, false);
             }
@@ -121,6 +122,10 @@ $(function() {
                 var newY = touch.clientY;
                 consolog(newX, newY)
                 document.removeEventListener("touchmove", move_T);
+                if (picid==2)
+                {
+                    $(this).css("background-image", ori_img);
+                }
                 chrome.runtime.sendMessage(
                     {position:'set', X:newX, Y:newY},
                     function (response) {
@@ -134,7 +139,7 @@ $(function() {
                 consolog(e.clientX, e.clientY)
                 consolog('up');
                 document.removeEventListener("mousemove", move);
-                if (picid==2 &&idolid!=24 && idolid!=27)
+                if (picid==2)
                 {
                     $(this).css("background-image", ori_img);
                 }
@@ -160,10 +165,10 @@ $(function() {
                 // consolog(image);
                 ori_img = $(this).css("background-image")
                 // consolog(idolid);
-                if (picid==2 && idolid!=24 && idolid!=27)
+                if (picid==2)
                 {
                     gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(http://tmn07.com/load/"+ gif +")");
+                    $(this).css("background-image","url(http://tmn07.com/loadme/"+ gif +")");
                 }
                 // $(this).css("background-image","url(http://tmn07.com/load/"+ +")");
                 document.addEventListener("mousemove", move, false);

@@ -41,7 +41,7 @@ gif	2nd彩蛋
 
 
 ## TODO
-
+- [ ] 选项页面优化
 - [ ] 音效用法？
 - [ ] 同步旧页面？（例如position
 - [ ] github https?
