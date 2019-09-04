@@ -1,8 +1,9 @@
 {
     "manifest_version": 2,
-    "name": "show まつり",
-    "version": "1.2.0",
-    "description": "display hime and her friends in every page",
+    "name": "__MSG_appName__",
+    "description": "__MSG_appDesc__",
+    "default_locale": "zh_CN",
+    "version": "1.2.1",
     "browser_action": {
         "default_icon": "hime2.png",
         "default_title": "まつり!"

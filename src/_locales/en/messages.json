@@ -1,0 +1,26 @@
+{
+  "appName": {
+    "message": "show hime"
+  },
+  "appDesc": {
+    "message": "display hime and her friends in every page"
+  },
+  "optionPageTitle": {
+    "message": "Setting Page"
+  },
+  "optionHead1": {
+    "message": "Select idols you want to display"
+  },
+  "optionButtonSave":{
+    "message": "Save"
+  },
+  "optionButtonAll":{
+    "message": "All"
+  },
+  "optionButtonClr":{
+    "message": "Clear"
+  },
+  "finishMsg":{
+    "message": "save successful"
+  }
+}

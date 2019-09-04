@@ -17,6 +17,18 @@ function checkbox_init(val, name, check_status=false){
 
     return test;
 }
+// i18n
+finish_msg = "保存成功";
+if (chrome.i18n.getUILanguage()!="zh_CN") {
+    $('title')[0].innerText = chrome.i18n.getMessage("optionPageTitle");
+    $('h1').text(chrome.i18n.getMessage("optionHead1"))
+    $('#save_btn').text(chrome.i18n.getMessage("optionButtonSave"))
+    $('#all_btn').text(chrome.i18n.getMessage("optionButtonAll"))
+    $('#clr_btn').text(chrome.i18n.getMessage("optionButtonClr"))
+    finish_msg = chrome.i18n.getMessage("finishMsg")
+}
+
+
 
 chrome.storage.local.get({list:[]}, function(data){
     var show_list = data.list;
@@ -37,7 +49,7 @@ chrome.storage.local.get({list:[]}, function(data){
 })
 
 $("#save_btn").click(function(){
-    console.log("press!!");
+    // console.log("press!!");
     var show_list = [];
     idols = $("input.idol");
     lens = $("input.idol").length
@@ -48,8 +60,8 @@ $("#save_btn").click(function(){
     }
     console.log(show_list);
     chrome.storage.local.set({list: show_list}, function(){
-        console.log('存储完成');
-        alert('保存成功');
+        // console.log('存储完成');
+        alert(finish_msg);
     })
 
 })

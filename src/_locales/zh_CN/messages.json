@@ -1,0 +1,26 @@
+{
+  "appName": {
+    "message": "show まつり"
+  },
+  "appDesc": {
+    "message": "在每个网页上展示まつり和她的好伙伴们"
+  },
+  "optionPageTitle": {
+    "message": "设置页面"
+  },
+  "optionHead1": {
+    "message": "选择你要显示的偶像"
+  },
+  "optionButtonSave":{
+    "message": "保存"
+  },
+  "optionButtonAll":{
+    "message": "全选"
+  },
+  "optionButtonClr":{
+    "message": "清空"
+  },
+  "finishMsg":{
+    "message": "保存成功"
+  }
+}

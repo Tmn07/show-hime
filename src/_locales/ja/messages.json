@@ -1,0 +1,26 @@
+{
+  "appName": {
+    "message": "show まつり"
+  },
+  "appDesc": {
+    "message": "すべてのページにまつりとその友達を表示する"
+  },
+  "optionPageTitle": {
+    "message": "設定ページ"
+  },
+  "optionHead1": {
+    "message": "アイドルを選択"
+  },
+  "optionButtonSave":{
+    "message": "保存"
+  },
+  "optionButtonAll":{
+    "message": "全て"
+  },
+  "optionButtonClr":{
+    "message": "クリア"
+  },
+  "finishMsg":{
+    "message": "保存成功"
+  }
+}
