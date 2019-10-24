@@ -2,8 +2,6 @@
 *test.mp3
 
 # *.json
-
-
 # spider data
 img_spider/data/*
 img_spider/3dimg/*

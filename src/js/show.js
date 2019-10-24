@@ -51,7 +51,7 @@ $(function() {
             position = response.position;
             consolog('show_flag response:',response.show);
             consolog("position =", response.position);
-            img_url = "http://tmn07.com/load/" + idolid + "-" + picid + ".png";
+            img_url = "https://tmn07.com/load/" + idolid + "-" + picid + ".png";
             consolog(img_url);
             if(show_flag){
                 display_val = 'block';
@@ -61,6 +61,7 @@ $(function() {
             }
             //Code for displaying /images/myimage.png:
             // var imgURL = chrome.extension.getURL("data/22-0.png");
+            // consolog(imgURL);
             // <audio id='myaudio'src='http://tmn07.com/ho-test.mp3' hidden='true'></audio>\
             
             $('<img/>').attr('src', img_url).load(function() {
@@ -68,7 +69,7 @@ $(function() {
                 $(this).remove(); // prevent memory leaks as @benweet suggested
                 if (picid==2){
                     gif = idolid + "-" + picid + ".gif"
-                    $('<img/>').attr('src', "http://tmn07.com/loadme/"+ gif).load(function(){
+                    $('<img/>').attr('src', "https://tmn07.com/loadme/"+ gif).load(function(){
                         $(this).remove();
                     });
                 }
@@ -102,7 +103,7 @@ $(function() {
                 if (picid==2)
                 {
                     gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(http://tmn07.com/loadme/"+ gif +")");
+                    $(this).css("background-image","url(https://tmn07.com/loadme/"+ gif +")");
                 }
                 document.addEventListener("touchmove", move_T, false);
             }
@@ -168,7 +169,7 @@ $(function() {
                 if (picid==2)
                 {
                     gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(http://tmn07.com/loadme/"+ gif +")");
+                    $(this).css("background-image","url(https://tmn07.com/loadme/"+ gif +")");
                 }
                 // $(this).css("background-image","url(http://tmn07.com/load/"+ +")");
                 document.addEventListener("mousemove", move, false);
