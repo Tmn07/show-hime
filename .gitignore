@@ -8,6 +8,7 @@ img_spider/3dimg/*
 img_spider/test/*
 img_spider/me/*
 img_spider/loading/*
+img_spider/old-extention-data/*
 img_spider/*.json
 
 # 审核相关

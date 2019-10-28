@@ -51,8 +51,8 @@ $(function() {
             position = response.position;
             consolog('show_flag response:',response.show);
             consolog("position =", response.position);
-            img_url = "https://tmn07.com/load/" + idolid + "-" + picid + ".png";
-            consolog(img_url);
+            // img_url = "https://tmn07.com/load/" + idolid + "-" + picid + ".png";
+            // consolog(img_url);
             if(show_flag){
                 display_val = 'block';
             }
@@ -60,8 +60,9 @@ $(function() {
                 display_val = "none"
             }
             //Code for displaying /images/myimage.png:
-            // var imgURL = chrome.extension.getURL("data/22-0.png");
-            // consolog(imgURL);
+            // var imgURL = chrome.extension.getURL("data/1-0.png");
+            var img_url = chrome.extension.getURL("data/"+ idolid + "-" + picid + ".png");
+            consolog(img_url);
             // <audio id='myaudio'src='http://tmn07.com/ho-test.mp3' hidden='true'></audio>\
             
             $('<img/>').attr('src', img_url).load(function() {
@@ -69,7 +70,8 @@ $(function() {
                 $(this).remove(); // prevent memory leaks as @benweet suggested
                 if (picid==2){
                     gif = idolid + "-" + picid + ".gif"
-                    $('<img/>').attr('src', "https://tmn07.com/loadme/"+ gif).load(function(){
+                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    $('<img/>').attr('src', gif_url).load(function(){
                         $(this).remove();
                     });
                 }

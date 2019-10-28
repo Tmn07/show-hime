@@ -3,7 +3,7 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
     "default_locale": "zh_CN",
-    "version": "1.2.2",
+    "version": "1.3.0",
     "browser_action": {
         "default_icon": "hime2.png",
         "default_title": "まつり!"
@@ -23,10 +23,10 @@
     [
         {
             "matches": ["<all_urls>"],
-            "exclude_matches": ["*://twitter.com/*"],
             "js": ["js/jquery.min.js", "js/show.js"],
             "run_at": "document_start"
         }
     ],
+    "web_accessible_resources": ["data/*.png"],
     "options_page": "option/index.html"
 }
