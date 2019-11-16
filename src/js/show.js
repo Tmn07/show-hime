@@ -1,5 +1,4 @@
 $(function() {
-    // img_url = "https://tmn07.com/MLTD-rankingview/img/hime";
     // var log_flag = true;
     var log_flag = false;
     // 封装console.log
@@ -104,8 +103,8 @@ $(function() {
                 image = this;
                 if (picid==2)
                 {
-                    gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(https://tmn07.com/loadme/"+ gif +")");
+                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    $(this).css("background-image","url("+gif_url+")");
                 }
                 document.addEventListener("touchmove", move_T, false);
             }
@@ -170,10 +169,9 @@ $(function() {
                 // consolog(idolid);
                 if (picid==2)
                 {
-                    gif = idolid + "-" + picid + ".gif"
-                    $(this).css("background-image","url(https://tmn07.com/loadme/"+ gif +")");
+                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    $(this).css("background-image","url("+gif_url+")");
                 }
-                // $(this).css("background-image","url(http://tmn07.com/load/"+ +")");
                 document.addEventListener("mousemove", move, false);
             }
             
