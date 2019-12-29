@@ -7,7 +7,7 @@ dic = {}
 name_data = json.load(open("name.json"))
 
 # print(name_data)
-for num in range(1,56):
+for num in range(1,57):
     idol_name = name_data[str(num-1)]
     dic[num] = [idol_name, []]
 

@@ -26,6 +26,7 @@
 ## 图片命名规则
 
 00	39人MTG服装
+01	BNT 海外服装
 0	BNT
 1	UNION
 2	Flyers
