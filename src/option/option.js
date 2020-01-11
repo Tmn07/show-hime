@@ -83,3 +83,7 @@ $("#clr_btn").click(function(){
         }
     })
 })
+
+$("#ho_btn").click(function(){
+    window.open('./ho.html','_blank');
+})

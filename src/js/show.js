@@ -17,11 +17,20 @@ $(function() {
 
     var show_flag=true;
 
-    chrome.storage.local.get({list:[20]}, function(data){
+    chrome.storage.local.get({
+         list:[20],
+         ho_btn:"0",
+         ho_range:"1",
+         ho_prob:"3",
+         ho_method:[1],
+         ho_audio: [0],
+         }, function(data){
+
+
         if (data.list.length==0) {
             data.list = [20];
         }
-        consolog(data.list);
+        consolog(data);
         // 获取showlist，并随机一个
         var show_list = data.list;
         // https error
@@ -59,8 +68,11 @@ $(function() {
                 display_val = "none"
             }
             //Code for displaying /images/myimage.png:
-            // var imgURL = chrome.extension.getURL("data/1-0.png");
             var img_url = chrome.extension.getURL("data/"+ idolid + "-" + picid + ".png");
+
+            // audios selections
+            var audio_url = chrome.extension.getURL("audio/ho.ogg");
+
             consolog(img_url);
             // <audio id='myaudio'src='http://tmn07.com/ho-test.mp3' hidden='true'></audio>\
             
@@ -74,12 +86,17 @@ $(function() {
                         $(this).remove();
                     });
                 }
-                // $('body').css('background-image', 'url(http://picture.de/image.png)');
+
+                // <audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>\
+
                 $("body").append("<div id='hime07' style='background-repeat:no-repeat;\
                             background-size:100% 100%;-moz-background-size:100% 100%;\
                             display: "+display_val+";position: fixed;"+position+"height:\
                             "+ height +"px; width: 80px; z-index: 9999999999'> \
                             </div>");
+                if (data.ho_btn=="1") {
+                    $("body").append("<audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>")
+                }
                 $("#hime07").css('background-image', "url('"+img_url+"')");
                 $("#hime07").dblclick(function(){
                     $(this).css("display",'none');
@@ -88,13 +105,23 @@ $(function() {
                     });
                 })
                 var moving = false;
-                var cat = document.getElementById("hime07");
-                cat.addEventListener("mousedown", initialClick, false);
-                cat.addEventListener("mouseup", stopmove, false);
-                cat.addEventListener("touchstart", initialClick_T, false);
-                cat.addEventListener("touchend", stopmove_T, false);
+                var hime = document.getElementById("hime07");
+                hime.addEventListener("mousedown", initialClick, false);
+                hime.addEventListener("mouseup", stopmove, false);
+                hime.addEventListener("touchstart", initialClick_T, false);
+                hime.addEventListener("touchend", stopmove_T, false);
+
+                // 单击
+                hime.addEventListener('mousedown', ho);
+                // 双击 （单击存在的情况下 双击无法体现）
+                // hime.addEventListener('dblclick', ho);
+                // 拖动结束
+                hime.addEventListener("mouseup", ho);
             });
 
+            function ho(e) {
+                document.getElementById('myaudio').play();
+            }
 
             var ori_img = ""
 

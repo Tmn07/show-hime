@@ -3,7 +3,7 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
     "default_locale": "zh_CN",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "browser_action": {
         "default_icon": "hime2.png",
         "default_title": "まつり!"
@@ -27,6 +27,6 @@
             "run_at": "document_start"
         }
     ],
-    "web_accessible_resources": ["data/*.png", "data_gif/*.gif"],
+    "web_accessible_resources": ["data/*.png", "data_gif/*.gif", "audio/*.ogg"],
     "options_page": "option/index.html"
 }

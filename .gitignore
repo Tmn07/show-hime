@@ -1,6 +1,6 @@
 *test.html
 *test.mp3
-
+*.wav
 # *.json
 # spider data
 img_spider/data/*

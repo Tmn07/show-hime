@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>一键ho叫 设置页面</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="buttons-min.css">
+    <link rel="stylesheet" type="text/css" href="forms-min.css">
+    
+
+    <style type="text/css">
+        .ho-option{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <h1>一键ho叫</h1>
+
+    <div class="ho-option">
+        是否开启：
+        <label for="o11" class="pure-radio">
+            <input id="o11" type="radio" name="open" value="1">
+            开启
+        </label>    
+
+        <label for="o12" class="pure-radio">
+            <input id="o12" type="radio" name="open" value="0">
+            关闭
+        </label>
+    </div>
+
+    <div class="ho-option">
+        使用范围：
+        <label for="o21" class="pure-radio">
+            <input id="o21" type="radio" name="range" value="1">
+            まつり
+        </label>    
+
+        <label for="o22" class="pure-radio">
+            <input id="o22" type="radio" name="range" value="0">
+            全部
+        </label>
+    </div>
+
+    <div class="ho-option">
+        出现概率：
+        <select id="prob">
+            <option value ="1">100%</option>
+            <option value ="2">80%</option>
+            <option value ="3">60%</option>
+            <option value ="4">40%</option>
+            <option value ="5">20%</option>
+        </select>
+    </div>
+
+
+    <div class="ho-option">
+        ho叫方式：
+        <label for="a1" class="pure-radio">
+            <input id="a1" type="checkbox" name="methods" value="1">
+            单击
+
+        </label>    
+        <label for="a2" class="pure-radio">
+            <input id="a2" type="checkbox" name="methods" value="2">
+            拖动
+        </label>    
+
+        <label for="a3" class="pure-radio">
+            <input id="a3" type="checkbox" name="methods" value="3">
+            右键菜单选项
+        </label>
+
+
+        <label for="a4" class="pure-radio">
+            <input id="a4" type="checkbox" name="methods" value="4">
+            双击(同时会隐藏)
+        </label>
+    </div>
+
+    <div class="ho-option">
+        试听与选择：
+        <label for="audio1" class="pure-radio">
+            <input id="audio1" type="checkbox" name="audios" value="1">
+            <audio id="myaudio" src="../audio/ho.ogg"  controls="controls"></audio>
+
+
+        </label>    
+
+    </div>
+    <div class="ho-option">
+        <button id="ho_save_btn" class="pure-button">保存</button>
+    </div>
+
+<script type="text/javascript" src="ho.js"></script>
+</body>
+</html>

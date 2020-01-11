@@ -2,12 +2,12 @@
 chrome.contextMenus.create({
     title: "まつり!",
     onclick: function(){
-      // chrome.tabs.executeScript({
-      //   code: "document.getElementById('myaudio').play()"
-      // });
+      chrome.tabs.executeScript({
+        code: "document.getElementById('myaudio').play()"
+      });
       // 获取id
       // var myid = chrome.runtime.id;
-      chrome.tabs.create({url: "option/index.html"});
+      // chrome.tabs.create({url: "option/index.html"});
     }
 });
 
