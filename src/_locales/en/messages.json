@@ -22,5 +22,50 @@
   },
   "finishMsg":{
     "message": "save successful"
+  },
+  "noneHoMethod":{
+    "message": "there are no ほ methods"
+  },
+  "noneHoAudios":{
+    "message": "there are no ほ audio"
+  },
+  "hoPageTitle": {
+    "message": "ほ Setting Page"
+  },
+  "hoHead1": {
+    "message": "ほ"
+  },
+  "hoOpenOption": {
+    "message": "Whether to open:"
+  },
+  "hoOpen1": {
+    "message": "Open"
+  },
+  "hoOpen0": {
+    "message": "Close"
+  },
+  "hoRangeOption":{
+    "message": "Use range:"
+  },
+  "idolAll":{
+    "message": "All"
+  },
+  "hoProbOption":{
+    "message": "Probability:"
+  },
+  "hoMethodOption":{
+    "message": "ほ method:"
+  },
+  "hoMethod1":{
+    "message": "Click"
+  },
+  "hoMethod2":{
+    "message": "After click"
+  },
+  "hoMethod4":{
+    "message": "Double click"
+  },
+  "hoAudioOption":{
+    "message": "Selection and listening"
   }
 }

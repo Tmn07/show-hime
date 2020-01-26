@@ -24,13 +24,14 @@ $(function() {
 
     var show_flag=true;
     var ho_probs = [1, 0.8, 0.6, 0.4, 0.2];
+    
     chrome.storage.local.get({
          list:[20],
          ho_btn:"0",
          ho_range:"1",
          ho_prob:"3",
-         ho_method:[1],
-         ho_audio: [0],
+         ho_method:['1'],
+         ho_audio: ['1'],
          }, function(data){
 
         if (data.list.length==0) {
@@ -76,9 +77,6 @@ $(function() {
             //Code for displaying /images/myimage.png:
             var img_url = chrome.extension.getURL("data/"+ idolid + "-" + picid + ".png");
 
-            // audios selections
-            var audio_url = chrome.extension.getURL("audio/ho.ogg");
-
             consolog(img_url);
             // <audio id='myaudio'src='http://tmn07.com/ho-test.mp3' hidden='true'></audio>\
             
@@ -121,9 +119,18 @@ $(function() {
                 // consolog(data.ho_range);
                 // consolog(idolid);
                 if (data.ho_btn == "1" && (data.ho_range == '0' || (data.ho_range == '1' && idolid==21))) {
+                    // audios selections
+                    var ho_audio_filename = ["ho.ogg","ho_.ogg","hiho.ogg","wonderho.ogg","kuluri.ogg","waa.ogg","hehen.ogg","hemn.ogg","lumilumi.ogg","nanodesu.ogg","nanodesu.ogg","morning.ogg","matsuri.ogg"];
+
+                    var rand = data.ho_audio[Math.floor(Math.random() * data.ho_audio.length)];
+                    var audio_url = chrome.extension.getURL("audio/"+ho_audio_filename[rand-1]);
                     $("body").append("<audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>")
                     
                     function ho(e) {
+                        // var rand = ho_audio_filename[Math.floor(Math.random() * ho_audio_filename.length)];
+                        // var audio_url = chrome.extension.getURL("audio/"+rand);
+                        // $("body").prepend("<audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>")
+                        
                         p = Math.random();
                         if (p<ho_probs[data.ho_prob-1]) {
                             document.getElementById('myaudio').play();

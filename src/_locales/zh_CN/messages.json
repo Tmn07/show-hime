@@ -22,5 +22,50 @@
   },
   "finishMsg":{
     "message": "保存成功"
+  },
+  "noneHoMethod":{
+    "message": "未选择ho叫方式"
+  },
+  "noneHoAudios":{
+    "message": "未选择ho叫语音"
+  },
+  "hoPageTitle": {
+    "message": "一键ho叫 设置页面"
+  },
+  "hoHead1": {
+    "message": "一键ho叫"
+  },
+  "hoOpenOption": {
+    "message": "是否开启："
+  },
+  "hoOpen1": {
+    "message": "开启"
+  },
+  "hoOpen0": {
+    "message": "关闭"
+  },
+  "hoRangeOption":{
+    "message": "使用范围："
+  },
+  "idolAll":{
+    "message": "全部"
+  },
+  "hoProbOption":{
+    "message": "出现概率："
+  },
+  "hoMethodOption":{
+    "message": "ho叫方式："
+  },
+  "hoMethod1":{
+    "message": "点击"
+  },
+  "hoMethod2":{
+    "message": "点击后"
+  },
+  "hoMethod4":{
+    "message": "双击"
+  },
+  "hoAudioOption":{
+    "message": "试听与选择"
   }
 }
