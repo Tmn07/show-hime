@@ -43,6 +43,9 @@ chrome.storage.local.get({list:[]}, function(data){
         if (show_list[i]==54) {
             $("input.idol")[52].click();
         }
+        else if(show_list[i]==55){
+            $("input.idol")[53].click();
+        }
         else{
             $("input.idol")[show_list[i]].click();
         }

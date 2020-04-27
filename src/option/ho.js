@@ -1,4 +1,3 @@
-
 function set_options(data){
 	if (data.ho_btn=="1") {
 		$("#o11").click();
@@ -25,7 +24,6 @@ function set_options(data){
 	// $("#audio1").click();
 }
 
-
 if (chrome.i18n.getUILanguage()!="zh_CN") {
 	finish_msg = chrome.i18n.getMessage("finishMsg");
 	noneHoMethod = chrome.i18n.getMessage("noneHoMethod");
@@ -48,8 +46,6 @@ if (chrome.i18n.getUILanguage()!="zh_CN") {
     // $('#clr_btn').text(chrome.i18n.getMessage("optionButtonClr"))
     // finish_msg = chrome.i18n.getMessage("finishMsg")
 }
-
-
 
 $("#ho_save_btn").click(function(){
 
@@ -84,10 +80,10 @@ $("#ho_save_btn").click(function(){
 		}
 	}
 	// ho_method = $("");
-	console.log(ho_btn);
-	console.log(ho_range);
-	console.log(ho_prob);
-	console.log(ho_method);
+	// console.log(ho_btn);
+	// console.log(ho_range);
+	// console.log(ho_prob);
+	// console.log(ho_method);
     chrome.storage.local.set({
     	ho_btn: ho_btn,
     	ho_range: ho_range,
@@ -101,10 +97,6 @@ $("#ho_save_btn").click(function(){
 })
 
 
-
-
-
-
 chrome.storage.local.get({
 	 ho_btn:"0",
 	 ho_range:"1",
@@ -112,12 +104,7 @@ chrome.storage.local.get({
 	 ho_method:['1'],
 	 ho_audio: ['1'],
 	 }, function(data){
-
-	 console.log(data);
-
+	 // console.log(data);
 	 set_options(data);
-
-    // var show_list = data.list;
-    
 });
 

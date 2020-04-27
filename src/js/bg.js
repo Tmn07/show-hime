@@ -2,18 +2,18 @@
 chrome.contextMenus.create({
     title: "まつり!",
     onclick: function(){
-      chrome.tabs.executeScript({
-        code: "document.getElementById('myaudio').play()"
-      });
+      // chrome.tabs.executeScript({
+      //   code: "document.getElementById('myaudio').play()"
+      // });
       // 获取id
       // var myid = chrome.runtime.id;
-      // chrome.tabs.create({url: "option/index.html"});
+      chrome.tabs.create({url: "option/index.html"});
     }
 });
 
 
 var show_flag = true;
-var position ="right: 0px;top: 0px;";
+var position ="right: 30px;top: 30px;";
 chrome.runtime.onMessage.addListener(function (request, sender, callback) {
   cbk_obj = {}
   if (request.hasOwnProperty("position")) {
