@@ -52,6 +52,19 @@ chrome.runtime.onMessage.addListener(function (request, sender, callback) {
   callback(cbk_obj);
 });
 
+
+function sendMessageToContentScript(message, callback)
+{
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
+  {
+    chrome.tabs.sendMessage(tabs[0].id, message, function(response)
+    {
+      if(callback) callback(response);
+    });
+  });
+}
+
+
 chrome.browserAction.onClicked.addListener(function(tab) {
   if (show_flag) {
     show_flag=false;
@@ -59,9 +72,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   else{
     show_flag=true;
   }
-  chrome.tabs.executeScript({
-    code: 'display = document.querySelector("#hime07").style["display"];\
-     if (display=="none") {document.querySelector("#hime07").style["display"] = "block";}\
-      else{document.querySelector("#hime07").style["display"] = "none";}'
-  });
+  sendMessageToContentScript({cmd:'browserAction.onClicked', value:'click'},function(res){});
+  // chrome.tabs.executeScript({
+  //   code: 'display = document.querySelector("#hime07").style["display"];\
+  //    if (display=="none") {document.querySelector("#hime07").style["display"] = "block";}\
+  //     else{document.querySelector("#hime07").style["display"] = "none";}'
+  // });
 });

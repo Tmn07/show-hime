@@ -12,7 +12,7 @@
         "scripts" : ["js/bg.js"]
     },
     "permissions": [
-        "contextMenus", "storage", "tabs", "http://*/*", "https://*/*", "file:///*/*"
+        "contextMenus", "storage", "tabs"
     ],
     "icons": {
           "16": "hime2.png",

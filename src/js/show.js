@@ -1,4 +1,24 @@
 $(function() {
+
+    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
+    {
+        if(request.cmd == 'browserAction.onClicked') {
+            display = document.querySelector("#hime07").style["display"];
+            if (display=="none") { 
+                document.querySelector("#hime07").style["display"] = "block";
+            }
+            else { 
+                document.querySelector("#hime07").style["display"] = "none";
+            }
+            // alert(request.value);
+        } 
+        sendResponse('ok');
+        // $(this).css("display",'none');
+        // chrome.runtime.sendMessage({show:false},function (response) {
+        //     consolog('content get response:',response);
+        // });
+    });
+
     // var log_flag = true;
     var log_flag = false;
     // 封装console.log
@@ -154,7 +174,6 @@ $(function() {
 
 
             });
-
 
 
             var ori_img = ""
