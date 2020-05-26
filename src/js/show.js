@@ -70,7 +70,7 @@ $(function() {
         // consolog(info[idolid]);
         height = 80;
         picid = Math.floor((Math.random()*info[idolid][1].length));
-        // consolog(picid);
+        
         picid = info[idolid][1][picid]
         // consolog(picid);
         // 2nd tests
@@ -78,7 +78,7 @@ $(function() {
         if (picid == "00") {
             height = 90;
         }
-        
+
 
         // 获取showflag，position，注入元素
         chrome.runtime.sendMessage({show:"what", position:"what"},function (response) {
@@ -103,7 +103,7 @@ $(function() {
             $('<img/>').attr('src', img_url).load(function() {
 
                 $(this).remove(); // prevent memory leaks as @benweet suggested
-                if (picid==2){
+                if (picid=="2"){
                     gif = idolid + "-" + picid + ".gif"
                     gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $('<img/>').attr('src', gif_url).load(function(){
@@ -181,7 +181,7 @@ $(function() {
             // touch move event
             function initialClick_T(e) {
                 image = this;
-                if (picid==2)
+                if (picid=="2")
                 {
                     gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $(this).css("background-image","url("+gif_url+")");
@@ -204,7 +204,7 @@ $(function() {
                 var newY = touch.clientY;
                 // consolog(newX, newY)
                 document.removeEventListener("touchmove", move_T);
-                if (picid==2)
+                if (picid=="2")
                 {
                     $(this).css("background-image", ori_img);
                 }
@@ -221,7 +221,7 @@ $(function() {
                 // consolog(e.clientX, e.clientY)
                 // consolog('up');
                 document.removeEventListener("mousemove", move);
-                if (picid==2)
+                if (picid=="2")
                 {
                     $(this).css("background-image", ori_img);
                 }
@@ -247,7 +247,7 @@ $(function() {
                 // consolog(image);
                 ori_img = $(this).css("background-image")
                 // consolog(idolid);
-                if (picid==2)
+                if (picid=="2")
                 {
                     gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $(this).css("background-image","url("+gif_url+")");

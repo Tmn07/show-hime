@@ -3,7 +3,7 @@
     "name": "__MSG_appName__",
     "description": "__MSG_appDesc__",
     "default_locale": "zh_CN",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "browser_action": {
         "default_icon": "hime2.png",
         "default_title": "まつり!"
@@ -15,8 +15,8 @@
         "contextMenus", "storage", "tabs"
     ],
     "icons": {
-          "16": "hime2.png",
-          "48": "hime2.png",
+          "16": "hime2-16.png",
+          "48": "hime2-48.png",
           "128": "hime2.png"
         },
     "content_scripts": 
