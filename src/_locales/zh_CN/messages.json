@@ -1,71 +1,71 @@
 {
-  "appName": {
-    "message": "show まつり"
-  },
-  "appDesc": {
-    "message": "在每个网页上展示まつり和她的好伙伴们"
-  },
-  "optionPageTitle": {
-    "message": "设置页面"
-  },
-  "optionHead1": {
-    "message": "选择你要显示的偶像"
-  },
-  "optionButtonSave":{
-    "message": "保存"
-  },
-  "optionButtonAll":{
-    "message": "全选"
-  },
-  "optionButtonClr":{
-    "message": "清空"
-  },
-  "finishMsg":{
-    "message": "保存成功"
-  },
-  "noneHoMethod":{
-    "message": "未选择ho叫方式"
-  },
-  "noneHoAudios":{
-    "message": "未选择ho叫语音"
-  },
-  "hoPageTitle": {
-    "message": "一键ho叫 设置页面"
-  },
-  "hoHead1": {
-    "message": "一键ho叫"
-  },
-  "hoOpenOption": {
-    "message": "是否开启："
-  },
-  "hoOpen1": {
-    "message": "开启"
-  },
-  "hoOpen0": {
-    "message": "关闭"
-  },
-  "hoRangeOption":{
-    "message": "使用范围："
-  },
-  "idolAll":{
-    "message": "全部"
-  },
-  "hoProbOption":{
-    "message": "出现概率："
-  },
-  "hoMethodOption":{
-    "message": "ho叫方式："
-  },
-  "hoMethod1":{
-    "message": "点击"
-  },
-  "hoMethod2":{
-    "message": "点击后"
-  },
-  "hoMethod4":{
-    "message": "双击"
-  },
-  "hoAudioOption":{
-    "message": "试听与选择"
-  }
+   "appDesc": {
+      "message": "在每个网页上展示まつり和她的好伙伴们"
+   },
+   "appName": {
+      "message": "show まつり"
+   },
+   "finishMsg": {
+      "message": "保存成功"
+   },
+   "hoAudioOption": {
+      "message": "试听与选择"
+   },
+   "hoHead1": {
+      "message": "一键ho叫"
+   },
+   "hoMethod1": {
+      "message": "点击"
+   },
+   "hoMethod2": {
+      "message": "点击后"
+   },
+   "hoMethod4": {
+      "message": "双击"
+   },
+   "hoMethodOption": {
+      "message": "ho叫方式："
+   },
+   "hoOpen0": {
+      "message": "关闭"
+   },
+   "hoOpen1": {
+      "message": "开启"
+   },
+   "hoOpenOption": {
+      "message": "是否开启："
+   },
+   "hoPageTitle": {
+      "message": "一键ho叫 设置页面"
+   },
+   "hoProbOption": {
+      "message": "出现概率："
+   },
+   "hoRangeOption": {
+      "message": "使用范围："
+   },
+   "idolAll": {
+      "message": "全部"
+   },
+   "noneHoAudios": {
+      "message": "未选择ho叫语音"
+   },
+   "noneHoMethod": {
+      "message": "未选择ho叫方式"
+   },
+   "optionButtonAll": {
+      "message": "全选"
+   },
+   "optionButtonClr": {
+      "message": "清空"
+   },
+   "optionButtonSave": {
+      "message": "保存"
+   },
+   "optionHead1": {
+      "message": "选择你要显示的偶像"
+   },
+   "optionPageTitle": {
+      "message": "设置页面"
+   }
 }

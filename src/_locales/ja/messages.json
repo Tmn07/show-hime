@@ -1,71 +1,71 @@
 {
-  "appName": {
-    "message": "show まつり"
-  },
-  "appDesc": {
-    "message": "すべてのページにまつりとその友達を表示する"
-  },
-  "optionPageTitle": {
-    "message": "設定ページ"
-  },
-  "optionHead1": {
-    "message": "アイドルを選択"
-  },
-  "optionButtonSave":{
-    "message": "保存"
-  },
-  "optionButtonAll":{
-    "message": "全て"
-  },
-  "optionButtonClr":{
-    "message": "クリア"
-  },
-  "finishMsg":{
-    "message": "保存成功"
-  },
-  "noneHoMethod":{
-    "message": "未选择ho叫方式"
-  },
-  "noneHoAudios":{
-    "message": "未选择ho叫语音"
-  },
-  "hoPageTitle": {
-    "message": "ほ 設定ページ"
-  },
-  "hoHead1": {
-    "message": "ほ"
-  },
-  "hoOpenOption": {
-    "message": "開くかどうか："
-  },
-  "hoOpen1": {
-    "message": "開く"
-  },
-  "hoOpen0": {
-    "message": "閉じる"
-  },
-  "hoRangeOption":{
-    "message": "使用範囲："
-  },
-  "idolAll":{
-    "message": "全部"
-  },
-  "hoProbOption":{
-    "message": "出現確率："
-  },
-  "hoMethodOption":{
-    "message": "ほ方法："
-  },
-  "hoMethod1":{
-    "message": "クリック"
-  },
-  "hoMethod2":{
-    "message": "クリックした後"
-  },
-  "hoMethod4":{
-    "message": "ダブルクリック"
-  },
-  "hoAudioOption":{
-    "message": "聞いて選ぶ"
-  }
+   "appDesc": {
+      "message": "すべてのページにまつりとその友達を表示する"
+   },
+   "appName": {
+      "message": "show まつり"
+   },
+   "finishMsg": {
+      "message": "保存成功"
+   },
+   "hoAudioOption": {
+      "message": "聞いて選ぶ"
+   },
+   "hoHead1": {
+      "message": "ほ"
+   },
+   "hoMethod1": {
+      "message": "クリック"
+   },
+   "hoMethod2": {
+      "message": "クリックした後"
+   },
+   "hoMethod4": {
+      "message": "ダブルクリック"
+   },
+   "hoMethodOption": {
+      "message": "ほ方法："
+   },
+   "hoOpen0": {
+      "message": "閉じる"
+   },
+   "hoOpen1": {
+      "message": "開く"
+   },
+   "hoOpenOption": {
+      "message": "開くかどうか："
+   },
+   "hoPageTitle": {
+      "message": "ほ 設定ページ"
+   },
+   "hoProbOption": {
+      "message": "出現確率："
+   },
+   "hoRangeOption": {
+      "message": "使用範囲："
+   },
+   "idolAll": {
+      "message": "全部"
+   },
+   "noneHoAudios": {
+      "message": "未选择ho叫语音"
+   },
+   "noneHoMethod": {
+      "message": "未选择ho叫方式"
+   },
+   "optionButtonAll": {
+      "message": "全て"
+   },
+   "optionButtonClr": {
+      "message": "クリア"
+   },
+   "optionButtonSave": {
+      "message": "保存"
+   },
+   "optionHead1": {
+      "message": "アイドルを選択"
+   },
+   "optionPageTitle": {
+      "message": "設定ページ"
+   }
 }

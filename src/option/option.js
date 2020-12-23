@@ -9,7 +9,7 @@ function checkbox_init(val, name, check_status=false){
     var test = '<div class="hvr-grow">\
             <label>\
                 <div class="icon_img" style=" \
-                background-image: url(../data/'+(parseInt(val)+1)+'-01.png);">\
+                background-image: url(../data/'+(parseInt(val)+1)+'-3.png);">\
                 </div>\
                 <br>\
                 <input class="idol" iid="'+ val +'" type="checkbox" name="idol">'+name+'\

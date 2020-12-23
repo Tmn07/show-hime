@@ -1,71 +1,71 @@
 {
-  "appName": {
-    "message": "show hime"
-  },
-  "appDesc": {
-    "message": "display hime and her friends in every page"
-  },
-  "optionPageTitle": {
-    "message": "Setting Page"
-  },
-  "optionHead1": {
-    "message": "Select idols you want to display"
-  },
-  "optionButtonSave":{
-    "message": "Save"
-  },
-  "optionButtonAll":{
-    "message": "All"
-  },
-  "optionButtonClr":{
-    "message": "Clear"
-  },
-  "finishMsg":{
-    "message": "save successful"
-  },
-  "noneHoMethod":{
-    "message": "there are no ほ methods"
-  },
-  "noneHoAudios":{
-    "message": "there are no ほ audio"
-  },
-  "hoPageTitle": {
-    "message": "ほ Setting Page"
-  },
-  "hoHead1": {
-    "message": "ほ"
-  },
-  "hoOpenOption": {
-    "message": "Whether to open:"
-  },
-  "hoOpen1": {
-    "message": "Open"
-  },
-  "hoOpen0": {
-    "message": "Close"
-  },
-  "hoRangeOption":{
-    "message": "Use range:"
-  },
-  "idolAll":{
-    "message": "All"
-  },
-  "hoProbOption":{
-    "message": "Probability:"
-  },
-  "hoMethodOption":{
-    "message": "ほ method:"
-  },
-  "hoMethod1":{
-    "message": "Click"
-  },
-  "hoMethod2":{
-    "message": "After click"
-  },
-  "hoMethod4":{
-    "message": "Double click"
-  },
-  "hoAudioOption":{
-    "message": "Selection and listening"
-  }
+   "appDesc": {
+      "message": "display hime and her friends in every page"
+   },
+   "appName": {
+      "message": "show hime"
+   },
+   "finishMsg": {
+      "message": "save successful"
+   },
+   "hoAudioOption": {
+      "message": "Selection and listening"
+   },
+   "hoHead1": {
+      "message": "ほ"
+   },
+   "hoMethod1": {
+      "message": "Click"
+   },
+   "hoMethod2": {
+      "message": "After click"
+   },
+   "hoMethod4": {
+      "message": "Double click"
+   },
+   "hoMethodOption": {
+      "message": "ほ method:"
+   },
+   "hoOpen0": {
+      "message": "Close"
+   },
+   "hoOpen1": {
+      "message": "Open"
+   },
+   "hoOpenOption": {
+      "message": "Whether to open:"
+   },
+   "hoPageTitle": {
+      "message": "ほ Setting Page"
+   },
+   "hoProbOption": {
+      "message": "Probability:"
+   },
+   "hoRangeOption": {
+      "message": "Use range:"
+   },
+   "idolAll": {
+      "message": "All"
+   },
+   "noneHoAudios": {
+      "message": "there are no ほ audio"
+   },
+   "noneHoMethod": {
+      "message": "there are no ほ methods"
+   },
+   "optionButtonAll": {
+      "message": "All"
+   },
+   "optionButtonClr": {
+      "message": "Clear"
+   },
+   "optionButtonSave": {
+      "message": "Save"
+   },
+   "optionHead1": {
+      "message": "Select idols you want to display"
+   },
+   "optionPageTitle": {
+      "message": "Setting Page"
+   }
 }

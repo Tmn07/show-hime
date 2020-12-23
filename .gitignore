@@ -11,6 +11,8 @@ img_spider/loading/*
 img_spider/old-extention-data/*
 img_spider/*.json
 
+old/*
+
 # 审核相关
 chrome/*
 *.pem
