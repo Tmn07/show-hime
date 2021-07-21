@@ -30,16 +30,18 @@
 0	BNT
 1	UNION
 2	Flyers
+3	GlowMaps
+4	Harmony4You
 10	拉面
 11	罗森
-12	绿色?
+12	东急?
+13	1周年公开煤炉联动素材。未处理
 22	TOP
 gif	2nd彩蛋
 
 ## TODO
 - [ ] 点击出popup页面（隐藏，选项，一键ho教）
 - [ ] 选项页面优化
-- [ ] 权限缩减
 - [ ] 同步旧页面？（例如position
 
 ## 小记

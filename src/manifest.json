@@ -3,7 +3,7 @@
       "scripts": [ "js/bg.js" ]
    },
    "browser_action": {
-      "default_icon": "hime3.png",
+      "default_icon": "hime4.png",
       "default_title": "まつり!"
    },
    "content_scripts": [ {
@@ -14,14 +14,14 @@
    "default_locale": "zh_CN",
    "description": "__MSG_appDesc__",
    "icons": {
-      "128": "hime3.png",
-      "16": "hime3-16.png",
-      "48": "hime3-48.png"
+      "128": "hime4.png",
+      "16": "hime4-16.png",
+      "48": "hime4-48.png"
    },
    "manifest_version": 2,
    "name": "__MSG_appName__",
    "options_page": "option/index.html",
    "permissions": [ "contextMenus", "storage", "tabs" ],
-   "version": "1.4.1",
+   "version": "1.5.0",
    "web_accessible_resources": [ "data/*.png", "data_gif/*.gif", "audio/*.ogg" ]
 }
