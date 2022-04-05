@@ -11,6 +11,8 @@ img_spider/loading/*
 img_spider/old-extention-data/*
 img_spider/*.json
 
+src/tmp/*
+
 old/*
 
 # 审核相关
