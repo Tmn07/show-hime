@@ -26,4 +26,4 @@
 
 欢迎用任意联系方式戳我，qq, qq邮箱, github issue啥的
 
-mail: 519043202@qq.com
+mail: tmn0796@gmail.com
