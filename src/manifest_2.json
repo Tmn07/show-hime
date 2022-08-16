@@ -1,13 +1,11 @@
 {
    "background": {
-      "service_worker": "bg.js"
+      "scripts": [ "js/bg.js" ]
    },
-
-   "action": {
+   "browser_action": {
       "default_icon": "hime41.png",
-      "default_title": "まつり-test!"
+      "default_title": "まつり!"
    },
-
    "content_scripts": [ {
       "js": [ "js/jquery.min.js", "js/show.js" ],
       "matches": ["<all_urls>"],
@@ -20,15 +18,10 @@
       "16": "hime41-16.png",
       "48": "hime41-48.png"
    },
-   "manifest_version": 3,
+   "manifest_version": 2,
    "name": "__MSG_appName__",
    "options_page": "option/index.html",
    "permissions": [ "contextMenus", "storage", "tabs" ],
-   "version": "1.6",
-   "web_accessible_resources": [
-      {
-         "resources": ["data/*.png", "data_gif/*.gif", "audio/*.ogg"],
-         "matches": [ "https://*/*", "http://*/*" ] // ?
-      }
-   ]
+   "version": "1.5.1",
+   "web_accessible_resources": [ "data/*.png", "data_gif/*.gif", "audio/*.ogg" ]
 }

@@ -1,7 +1,9 @@
 $(function() {
 
+    // 接收“后台脚本”传来的信息，这里为处理插件按钮事件
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-    {
+    {   
+        console.log(request);
         if(request.cmd == 'browserAction.onClicked') {
             display = document.querySelector("#hime07").style["display"];
             if (display=="none") { 
@@ -45,6 +47,7 @@ $(function() {
     var show_flag=true;
     var ho_probs = [1, 0.8, 0.6, 0.4, 0.2];
     
+    // 从本地存储中获取参数信息
     chrome.storage.local.get({
          list:[20],
          ho_btn:"0",
@@ -140,7 +143,7 @@ $(function() {
         if (picid == "41") {
             height = 75;
         }
-        // 获取showflag，position，注入元素
+        // 从后台脚本中获取showflag，position属性；注入元素
         chrome.runtime.sendMessage({show:"what", position:"what"},function (response) {
             show_flag = response.show;
             position = response.position;
@@ -155,7 +158,7 @@ $(function() {
                 display_val = "none"
             }
             //Code for displaying /images/myimage.png:
-            var img_url = chrome.extension.getURL("data/"+ idolid + "-" + picid + ".png");
+            var img_url = chrome.runtime.getURL("data/"+ idolid + "-" + picid + ".png");
 
             consolog(img_url);
             // <audio id='myaudio'src='http://tmn07.com/ho-test.mp3' hidden='true'></audio>\
@@ -165,7 +168,7 @@ $(function() {
                 $(this).remove(); // prevent memory leaks as @benweet suggested
                 if (picid=="2"){
                     gif = idolid + "-" + picid + ".gif"
-                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    gif_url = chrome.runtime.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $('<img/>').attr('src', gif_url).load(function(){
                         $(this).remove();
                     });
@@ -181,7 +184,7 @@ $(function() {
 
                 $("#hime07").css('background-image', "url('"+img_url+"')");
                 $("#hime07").dblclick(function(){
-                    $(this).css("display",'none');
+                    // $(this).css("display",'none');
                     chrome.runtime.sendMessage({show:false},function (response) {
                         consolog('content get response:',response);
                     });
@@ -203,12 +206,12 @@ $(function() {
                     var ho_audio_filename = ["ho.ogg","ho_.ogg","hiho.ogg","wonderho.ogg","kuluri.ogg","waa.ogg","hehen.ogg","hemn.ogg","lumilumi.ogg","nanodesu.ogg","nanodesu.ogg","morning.ogg","matsuri.ogg"];
 
                     var rand = data.ho_audio[Math.floor(Math.random() * data.ho_audio.length)];
-                    var audio_url = chrome.extension.getURL("audio/"+ho_audio_filename[rand-1]);
+                    var audio_url = chrome.runtime.getURL("audio/"+ho_audio_filename[rand-1]);
                     $("body").append("<audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>")
                     
                     function ho(e) {
                         // var rand = ho_audio_filename[Math.floor(Math.random() * ho_audio_filename.length)];
-                        // var audio_url = chrome.extension.getURL("audio/"+rand);
+                        // var audio_url = chrome.runtime.getURL("audio/"+rand);
                         // $("body").prepend("<audio id='myaudio' src='"+audio_url+"' hidden='true'></audio>")
                         
                         p = Math.random();
@@ -235,15 +238,15 @@ $(function() {
 
             });
 
-
+            // 2周年图标移动时显示动图，保存原图信息
             var ori_img = ""
 
-            // touch move event
+            // touch 事件 _T
             function initialClick_T(e) {
                 image = this;
                 if (picid=="2")
                 {
-                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    gif_url = chrome.runtime.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $(this).css("background-image","url("+gif_url+")");
                 }
                 document.addEventListener("touchmove", move_T, false);
@@ -276,6 +279,8 @@ $(function() {
                     }
                 );
             }
+
+            // 鼠标点击移动事件
             // mouse click move event
             function stopmove(e){
                 // consolog(e.clientX, e.clientY)
@@ -293,7 +298,6 @@ $(function() {
                     }
                 );
             }
-
             function move(e){
                 var newX = e.clientX -40;
                 var newY = e.clientY -60;
@@ -301,7 +305,6 @@ $(function() {
                 image.style.top = newY + "px";
                 // consolog(newX, newY)
             }
-
             function initialClick(e) {
                 image = this;
                 // consolog(image);
@@ -309,7 +312,7 @@ $(function() {
                 // consolog(idolid);
                 if (picid=="2")
                 {
-                    gif_url = chrome.extension.getURL("data_gif/" + idolid + "-" + picid + ".gif")
+                    gif_url = chrome.runtime.getURL("data_gif/" + idolid + "-" + picid + ".gif")
                     $(this).css("background-image","url("+gif_url+")");
                 }
                 document.addEventListener("mousemove", move, false);
