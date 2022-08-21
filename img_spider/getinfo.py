@@ -22,6 +22,6 @@ for img in d:
     # else:
     #     dic[idol_id] = [idol_name, [img_id]]
 
-with open('minfo2.json', 'w') as f:
+with open('info2.json', 'w') as f:
     json.dump(dic, f)
 # print(dic)

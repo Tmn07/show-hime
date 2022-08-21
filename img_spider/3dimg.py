@@ -7,7 +7,7 @@ import os.path as path
 def img_exist(filename):
     return path.exists(filename)
 
-data_dir = "3dimg/"
+data_dir = "new/"
 
 
 headers ={
@@ -18,15 +18,16 @@ def download_img(img_url, num, i):
 	try:
 		img_r = requests.get(img_url, headers=headers, timeout=10)
 		if img_r.status_code == 200:
-			with open(data_dir+str(num)+"_"+str(i)+".png", 'wb') as f:
+			with open(data_dir+str(num)+"-"+str(i)+".png", 'wb') as f:
+			# with open(data_dir+str(num)+"-5.png", 'wb') as f:
 				f.write(img_r.content)
-				print(str(num)+"_"+str(i)+".png writedown ok")
+				print(str(num)+"-"+str(i)+".png writedown ok")
 				return True
 		else:
-			print(str(num)+"_"+str(i)+".png error")
+			print(str(num)+"-"+str(i)+".png error")
 			return False
 	except Exception as e:
-		print(str(num)+"_"+str(i)+".png timeout")
+		print(str(num)+"-"+str(i)+".png timeout")
 		return False
 
 def get_info(url, num):
@@ -54,19 +55,24 @@ def get_idol_3dimg(idol_num):
 	# r = requests.get(url)
 	soup = BeautifulSoup(r.content, "lxml")
 	div = soup.find("div", "chara-img-wrapper")
-	d3_spans = div.find_all("span",attrs={"data-target": ".chara-profile-img"})
-	# d3_spans[0].attrs['data-img-url']
-	# img_r = requests.get(d3_spans[0].attrs['data-img-url'], headers=headers)
-	for i, span in enumerate(d3_spans):
-		if img_exist(data_dir+str(num)+"_"+str(i)+".png"):
-			print (str(num)+"_"+str(i)+" exist")
-			continue
-		# print(i)
-		img_url = span.attrs['data-img-url']
-		status = False
-		while status==False:
-			status = download_img(img_url, num, i)
+	# d3_spans = div.find_all("span",attrs={"data-target": ".chara-profile-img"}) # 3d
+	d3_spans = div.find_all("span",attrs={"data-target": ".chara-loading-img"})   # loading
+	
 
+	# 全部存下来，命名规则有问题
+	# for i, span in enumerate(d3_spans):
+	# 	if img_exist(data_dir+str(num)+"-"+str(i)+".png"):
+	# 		print (str(num)+"-"+str(i)+" exist")
+	# 		continue
+	# 	# print(i)
+	# 	img_url = span.attrs['data-img-url']
+	# 	status = False
+	# 	while status==False:
+	# 		status = download_img(img_url, num, i)
+
+	span = d3_spans[-1]
+	img_url = span.attrs['data-img-url']
+	download_img(img_url, num, 5)
 
 
 for num in range(1,56):
