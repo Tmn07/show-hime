@@ -35,8 +35,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, callback) {
         cbk_obj["position"] = result.ho_position;
       }
       if (request.position=="set") {
-        left_var = request.X-40;
-        top_var = request.Y-60;
+        left_var = request.X;
+        top_var = request.Y;
         position = "left:" + left_var + "px;top:" + top_var + "px;"
         // callback["msg"]
         chrome.storage.local.set({
