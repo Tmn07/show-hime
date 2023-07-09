@@ -18,49 +18,62 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 
 // 默认参数
-var show_flag = true;
-var position ="right: 30px;top: 30px;";
+// var show_flag = true;
+// var position ="right: 30px;top: 30px;";
 
 // 接收从“前台页面”(ContentScript)传来的信息
 // 记录show、position相关信息（其实都用chrome.storage进行存储也行？）
 chrome.runtime.onMessage.addListener(function (request, sender, callback) {
-  cbk_obj = {}
-  if (request.hasOwnProperty("position")) {
-    if (request.position=="what"){
-      // callback(position);
-      cbk_obj["position"] = position;
+  chrome.storage.local.get({
+    ho_position: "right: 30px;top: 30px;",
+    ho_show_flag: true,
+  }, function (result) {
+    cbk_obj = {}
+    if (request.hasOwnProperty("position")) {
+      if (request.position=="what"){
+        // callback(position);
+        cbk_obj["position"] = result.ho_position;
+      }
+      if (request.position=="set") {
+        left_var = request.X;
+        top_var = request.Y;
+        position = "left:" + left_var + "px;top:" + top_var + "px;"
+        // callback["msg"]
+        chrome.storage.local.set({
+          ho_position: position,
+        });
+        callback("set position at "+position);
+      }
     }
-    if (request.position=="set") {
-      left_var = request.X-40;
-      top_var = request.Y-60;
-      position = "left:" + left_var + "px;top:" + top_var + "px;"
-      // callback["msg"]
-      callback("set position at "+position);
+    
+    if(request.hasOwnProperty("show")){
+      if (request.show == "what")
+      {
+        cbk_obj["show"] = result.ho_show_flag;
+        // callback(show_flag);
+      }
+      if (request.show==true)
+      {
+        chrome.storage.local.set({
+          ho_show_flag: request.show,
+        });
+        cbk_obj['msg'] = "set show_flag true";
+        callback("set show_flag true");
+      }
+      if(request.show==false)
+      {
+        chrome.storage.local.set({
+          ho_show_flag: request.show,
+        });
+        cbk_obj['msg'] = "set show_flag false";
+        callback("set show_flag false");
+        // 关掉全部页面的显示
+        sendMessageToContentScript({cmd:'browserAction.onClicked', value:'click'},function(res){});
+      }
     }
-  }
-
-  if(request.hasOwnProperty("show")){
-    if (request.show == "what")
-    {
-      cbk_obj["show"] = show_flag;
-      // callback(show_flag);
-    }
-    if (request.show==true)
-    {
-      show_flag = true;
-      cbk_obj['msg'] = "set show_flag true";
-      callback("set show_flag true");
-    }
-    if(request.show==false)
-    {
-      show_flag = false;
-      cbk_obj['msg'] = "set show_flag false";
-      callback("set show_flag false");
-      // 关掉全部页面的显示
-      sendMessageToContentScript({cmd:'browserAction.onClicked', value:'click'},function(res){});
-    }
-  }
-  callback(cbk_obj);
+    callback(cbk_obj);
+  })
+  return true;
 });
 
 
@@ -96,12 +109,9 @@ function sendMessageToContentScript(message, callback)
 
 // 注册插件按钮事件
 chrome.action.onClicked.addListener(function(tab) {
-  if (show_flag) {
-    show_flag=false;
-  }
-  else{
-    show_flag=true;
-  }
+  chrome.storage.local.set({
+    ho_show_flag: true,
+  });
   sendMessageToContentScript({cmd:'browserAction.onClicked', value:'click'},function(res){});
   // chrome.tabs.executeScript({
   //   code: 'display = document.querySelector("#hime07").style["display"];\

@@ -46,6 +46,8 @@ $(function() {
 
     var show_flag=true;
     var ho_probs = [1, 0.8, 0.6, 0.4, 0.2];
+    var offsetX = 0;
+    var offsetY = 0;
     
     // 从本地存储中获取参数信息
     chrome.storage.local.get({
@@ -241,9 +243,30 @@ $(function() {
             // 2周年图标移动时显示动图，保存原图信息
             var ori_img = ""
 
+            function get_position(touch) {
+                var newX = touch.clientX - offsetX;
+                var newY = touch.clientY - offsetY;
+                return [newX, newY];
+            }
+
+            function update_position(touch) {
+                var [newX, newY] = get_position(touch);
+                image.style.left = newX + "px";
+                image.style.top = newY + "px";
+            }
+
+            function save_offset(touch) {
+                if (image) {
+                    const rect = image.getBoundingClientRect();
+                    offsetX = touch.clientX - rect.left;
+                    offsetY = touch.clientY - rect.top;
+                }
+            }
+
             // touch 事件 _T
             function initialClick_T(e) {
                 image = this;
+                save_offset(e.touches[0]);
                 if (picid=="2")
                 {
                     gif_url = chrome.runtime.getURL("data_gif/" + idolid + "-" + picid + ".gif")
@@ -253,11 +276,7 @@ $(function() {
             }
             function move_T(e){
                 // consolog(e)
-                var touch = e.touches[0];
-                var newX = touch.clientX -40;
-                var newY = touch.clientY -60;
-                image.style.left = newX + "px";
-                image.style.top = newY + "px";
+                update_position(e.touches[0]);
                 // consolog(newX, newY)
             }
             function stopmove_T(e){
@@ -271,8 +290,9 @@ $(function() {
                 {
                     $(this).css("background-image", ori_img);
                 }
+                var [X, Y] = get_position(touch);
                 chrome.runtime.sendMessage(
-                    {position:'set', X:newX, Y:newY},
+                    {position:'set', X, Y},
                     function (response) {
                         consolog('content get response:',response);
                         ;
@@ -290,8 +310,9 @@ $(function() {
                 {
                     $(this).css("background-image", ori_img);
                 }
+                var [X, Y] = get_position(e);
                 chrome.runtime.sendMessage(
-                    {position:'set', X:e.clientX, Y:e.clientY},
+                    {position:'set', X, Y},
                     function (response) {
                         consolog('content get response:',response);
                         ;
@@ -299,14 +320,12 @@ $(function() {
                 );
             }
             function move(e){
-                var newX = e.clientX -40;
-                var newY = e.clientY -60;
-                image.style.left = newX + "px";
-                image.style.top = newY + "px";
+                update_position(e);
                 // consolog(newX, newY)
             }
             function initialClick(e) {
                 image = this;
+                save_offset(e);
                 // consolog(image);
                 ori_img = $(this).css("background-image")
                 // consolog(idolid);
