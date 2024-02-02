@@ -23,7 +23,7 @@
    "name": "__MSG_appName__",
    "options_page": "option/index.html",
    "permissions": [ "contextMenus", "storage", "tabs" ],
-   "version": "1.6",
+   "version": "1.6.0",
    "web_accessible_resources": [
       {
          "resources": ["data/*.png", "data_gif/*.gif", "audio/*.ogg"],

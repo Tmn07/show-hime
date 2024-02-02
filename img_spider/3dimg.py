@@ -72,7 +72,7 @@ def get_idol_3dimg(idol_num):
 
 	span = d3_spans[-1]
 	img_url = span.attrs['data-img-url']
-	download_img(img_url, num, 5)
+	download_img(img_url, num, 6)
 
 
 for num in range(1,56):
