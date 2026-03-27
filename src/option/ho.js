@@ -1,110 +1,110 @@
-function set_options(data){
-	if (data.ho_btn=="1") {
-		$("#o11").click();
-	}
-	else{
-		$("#o12").click();
-	}
+'use strict';
 
-	if (data.ho_range=="1") {
-		$("#o21").click();
-	}
-	else{
-		$("#o22").click();
-	}
+// ---------------------------------------------------------------------------
+// i18n（始终从 messages.json 中读取，zh_CN 也使用同一套机制）
+// ---------------------------------------------------------------------------
 
-	$("#prob").val(data.ho_prob);
-
-	for(var num in data.ho_method){
-		$("#m"+data.ho_method[num]).click();
-	}
-	for(var num in data.ho_audio){
-		$("#a"+data.ho_audio[num]).click();
-	}
-	// $("#audio1").click();
+function msg(key) {
+  return chrome.i18n.getMessage(key) || '';
 }
 
-if (chrome.i18n.getUILanguage()!="zh_CN") {
-	finish_msg = chrome.i18n.getMessage("finishMsg");
-	noneHoMethod = chrome.i18n.getMessage("noneHoMethod");
-	noneHoAudios = chrome.i18n.getMessage("noneHoAudios");
-    $('title')[0].innerText = chrome.i18n.getMessage("hoPageTitle");
-    $('h1').text(chrome.i18n.getMessage("hoHead1"))
-    $("#hoOpenOption").text(chrome.i18n.getMessage("hoOpenOption"));
-    $("#hoOpen1").text(chrome.i18n.getMessage("hoOpen1"));
-    $("#hoOpen0").text(chrome.i18n.getMessage("hoOpen0"));
-    $("#hoRangeOption").text(chrome.i18n.getMessage("hoRangeOption"));
-    $("#idolAll").text(chrome.i18n.getMessage("idolAll"));
-    $("#hoProbOption").text(chrome.i18n.getMessage("hoProbOption"));
-    $("#hoMethodOption").text(chrome.i18n.getMessage("hoMethodOption"));
-    $("#hoMethod1").text(chrome.i18n.getMessage("hoMethod1"));
-    $("#hoMethod2").text(chrome.i18n.getMessage("hoMethod2"));
-    $("#hoMethod4").text(chrome.i18n.getMessage("hoMethod4"));
-    $("#hoAudioOption").text(chrome.i18n.getMessage("hoAudioOption"));
-    $("#ho_save_btn").text(chrome.i18n.getMessage("optionButtonSave"))
-    // $('#all_btn').text(chrome.i18n.getMessage("optionButtonAll"))
-    // $('#clr_btn').text(chrome.i18n.getMessage("optionButtonClr"))
-    // finish_msg = chrome.i18n.getMessage("finishMsg")
+function applyI18n() {
+  if (chrome.i18n.getUILanguage() === 'zh_CN') return;
+
+  document.title = msg('hoPageTitle');
+  $('h1').text(msg('hoHead1'));
+  $('#hoOpenOption').text(msg('hoOpenOption'));
+  $('#hoOpen1').text(msg('hoOpen1'));
+  $('#hoOpen0').text(msg('hoOpen0'));
+  $('#hoRangeOption').text(msg('hoRangeOption'));
+  $('#idolAll').text(msg('idolAll'));
+  $('#hoProbOption').text(msg('hoProbOption'));
+  $('#hoMethodOption').text(msg('hoMethodOption'));
+  $('#hoMethod1').text(msg('hoMethod1'));
+  $('#hoMethod2').text(msg('hoMethod2'));
+  $('#hoMethod4').text(msg('hoMethod4'));
+  $('#hoAudioOption').text(msg('hoAudioOption'));
+  $('#ho_save_btn').text(msg('optionButtonSave'));
 }
 
-$("#ho_save_btn").click(function(){
+// 不区分语言，直接从 messages.json 取（zh_CN 也在其中定义）
+const finishMsg    = msg('finishMsg')    || '保存成功';
+const noneHoMethod = msg('noneHoMethod') || '未选择ho叫方式';
+const noneHoAudios = msg('noneHoAudios') || '未选择ho叫语音';
 
-	ho_btn = $("[name='open']:checked")[0].value;
-	ho_range = $("[name='range']:checked")[0].value;
-	ho_prob = $("#prob").val();
-	ho_method = [];
+// ---------------------------------------------------------------------------
+// 从存储恢复表单状态
+// ---------------------------------------------------------------------------
 
+function restoreOptions(data) {
+  // 开关
+  $(`#o1${data.ho_btn === '1' ? '1' : '2'}`).prop('checked', true);
 
-	methods = $("[name='methods']:checked");
-	method_num = methods.length;
-	if (ho_btn=="1" && method_num==0) {
-		alert(noneHoMethod);
-		return 0;
-	}
-	else{
-		for (var i = 0; i < method_num; i++) {
-			ho_method.push(methods[i].value);
-		}
-	}
+  // 范围
+  $(`#o2${data.ho_range === '1' ? '1' : '2'}`).prop('checked', true);
 
-	ho_audio = [];
-	audios = $("[name='audios']:checked");
-	audio_num = audios.length;
-	if (ho_btn=="1" && audio_num==0) {
-		alert(noneHoAudios);
-		return 0;
-	}
-	else{
-		for (var i = 0; i < audio_num; i++) {
-			ho_audio.push(audios[i].value);
-		}
-	}
-	// ho_method = $("");
-	// console.log(ho_btn);
-	// console.log(ho_range);
-	// console.log(ho_prob);
-	// console.log(ho_method);
-    chrome.storage.local.set({
-    	ho_btn: ho_btn,
-    	ho_range: ho_range,
-    	ho_prob: ho_prob,
-    	ho_method: ho_method,
-    	ho_audio: ho_audio
-    }, function(){
-        // console.log('存储完成');
-        alert(finish_msg);
-    })
-})
+  // 概率
+  $('#prob').val(data.ho_prob);
 
+  // 触发方式
+  for (const val of data.ho_method) {
+    $(`#m${val}`).prop('checked', true);
+  }
 
-chrome.storage.local.get({
-	 ho_btn:"0",
-	 ho_range:"1",
-	 ho_prob:"3",
-	 ho_method:['1'],
-	 ho_audio: ['1'],
-	 }, function(data){
-	 // console.log(data);
-	 set_options(data);
+  // 音频
+  for (const val of data.ho_audio) {
+    $(`#a${val}`).prop('checked', true);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 保存表单
+// ---------------------------------------------------------------------------
+
+function saveOptions() {
+  const ho_btn   = $('[name="open"]:checked').val();
+  const ho_range = $('[name="range"]:checked').val();
+  const ho_prob  = $('#prob').val();
+
+  const methods   = $('[name="methods"]:checked');
+  const audios    = $('[name="audios"]:checked');
+
+  if (ho_btn === '1' && methods.length === 0) {
+    alert(noneHoMethod);
+    return;
+  }
+
+  if (ho_btn === '1' && audios.length === 0) {
+    alert(noneHoAudios);
+    return;
+  }
+
+  const ho_method = methods.map(function () { return this.value; }).get();
+  const ho_audio  = audios.map(function () { return this.value; }).get();
+
+  chrome.storage.local.set({ ho_btn, ho_range, ho_prob, ho_method, ho_audio }, function () {
+    alert(finishMsg);
+  });
+}
+
+// ---------------------------------------------------------------------------
+// 入口
+// ---------------------------------------------------------------------------
+
+$(function () {
+  applyI18n();
+
+  const storageDefaults = {
+    ho_btn:    '0',
+    ho_range:  '1',
+    ho_prob:   '3',
+    ho_method: ['1'],
+    ho_audio:  ['1'],
+  };
+
+  chrome.storage.local.get(storageDefaults, function (data) {
+    restoreOptions(data);
+  });
+
+  $('#ho_save_btn').on('click', saveOptions);
 });
-

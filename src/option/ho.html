@@ -1,247 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>一键ho叫 设置页面</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="buttons-min.css">
-    <link rel="stylesheet" type="text/css" href="forms-min.css">
-
-    <style type="text/css">
-        .ho-option{
-            padding: 10px;
-        }
-        .audio-option {
-            display: inline-block;
-            width: 100px;
-        }
-        .audioplay-object {
-            display: inline-block;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>一键ho叫 设置页面</title>
+  <link rel="stylesheet" href="buttons-min.css">
+  <link rel="stylesheet" href="forms-min.css">
+  <style>
+    .ho-option {
+      padding: 10px;
+    }
+    .audio-option {
+      display: inline-block;
+      width: 100px;
+    }
+    .audioplay-object {
+      display: inline-block;
+    }
+  </style>
 </head>
-
 <body>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <h1>一键ho叫</h1>
+  <script src="../js/jquery.min.js"></script>
 
-    <div class="ho-option">
-        <trans id="hoOpenOption">是否开启：</trans>
-        <label for="o11" class="pure-radio">
-            <input id="o11" type="radio" name="open" value="1">
-            <trans id="hoOpen1">开启</trans>
-        </label>    
+  <h1>一键ho叫</h1>
 
-        <label for="o12" class="pure-radio">
-            <input id="o12" type="radio" name="open" value="0">
-            <trans id="hoOpen0">关闭</trans>
-        </label>
+  <div class="ho-option">
+    <span id="hoOpenOption">是否开启：</span>
+    <label for="o11" class="pure-radio">
+      <input id="o11" type="radio" name="open" value="1">
+      <span id="hoOpen1">开启</span>
+    </label>
+    <label for="o12" class="pure-radio">
+      <input id="o12" type="radio" name="open" value="0">
+      <span id="hoOpen0">关闭</span>
+    </label>
+  </div>
+
+  <div class="ho-option">
+    <span id="hoRangeOption">使用范围：</span>
+    <label for="o21" class="pure-radio">
+      <input id="o21" type="radio" name="range" value="1">
+      まつり
+    </label>
+    <label for="o22" class="pure-radio">
+      <input id="o22" type="radio" name="range" value="0">
+      <span id="idolAll">全部</span>
+    </label>
+  </div>
+
+  <div class="ho-option">
+    <span id="hoProbOption">出现概率：</span>
+    <select id="prob">
+      <option value="1">100%</option>
+      <option value="2">80%</option>
+      <option value="3">60%</option>
+      <option value="4">40%</option>
+      <option value="5">20%</option>
+    </select>
+  </div>
+
+  <div class="ho-option">
+    <span id="hoMethodOption">ho叫方式：</span>
+    <label for="m1" class="pure-radio">
+      <input id="m1" type="checkbox" name="methods" value="1">
+      <span id="hoMethod1">点击</span>
+    </label>
+    <label for="m2" class="pure-radio">
+      <input id="m2" type="checkbox" name="methods" value="2">
+      <span id="hoMethod2">点击后</span>
+    </label>
+    <label for="m4" class="pure-radio">
+      <input id="m4" type="checkbox" name="methods" value="4">
+      <span id="hoMethod4">双击</span>
+    </label>
+  </div>
+
+  <div class="ho-option">
+    <span id="hoAudioOption">试听与选择：</span>
+    <br>
+
+    <div style="padding-left: 37px;">
+      ほ:
+      <div class="audio-option">
+        <input id="a1" type="checkbox" name="audios" value="1">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/ho.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a2" type="checkbox" name="audios" value="2">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/ho_.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a3" type="checkbox" name="audios" value="3">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/hiho.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a4" type="checkbox" name="audios" value="4">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/wonderho.ogg">
+          </audio>
+        </div>
+      </div>
     </div>
 
-    <div class="ho-option">
-        <trans id="hoRangeOption">使用范围：</trans>
-        <label for="o21" class="pure-radio">
-            <input id="o21" type="radio" name="range" value="1">
-            まつり
-        </label>    
-
-        <label for="o22" class="pure-radio">
-            <input id="o22" type="radio" name="range" value="0">
-            <trans id="idolAll">全部</trans>
-        </label>
+    <div>
+      かわいい:
+      <div class="audio-option">
+        <input id="a5" type="checkbox" name="audios" value="5">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/kuluri.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a6" type="checkbox" name="audios" value="6">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/waa.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a7" type="checkbox" name="audios" value="7">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/hehen.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a8" type="checkbox" name="audios" value="8">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/hemn.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a9" type="checkbox" name="audios" value="9">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/lumilumi.ogg">
+          </audio>
+        </div>
+      </div>
     </div>
 
-    <div class="ho-option">
-        <trans id="hoProbOption">出现概率：</trans>
-        <select id="prob">
-            <option value ="1">100%</option>
-            <option value ="2">80%</option>
-            <option value ="3">60%</option>
-            <option value ="4">40%</option>
-            <option value ="5">20%</option>
-        </select>
+    <div>
+      なのです:
+      <div class="audio-option">
+        <input id="a10" type="checkbox" name="audios" value="10">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/nanodesu.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a11" type="checkbox" name="audios" value="11">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/sonanodesu.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a12" type="checkbox" name="audios" value="12">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/morning.ogg">
+          </audio>
+        </div>
+      </div>
+      <div class="audio-option">
+        <input id="a13" type="checkbox" name="audios" value="13">
+        <div class="audioplay-object">
+          <div class="audioplay-button"></div>
+          <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
+            <source src="../audio/matsuri.ogg">
+          </audio>
+        </div>
+      </div>
     </div>
+  </div>
 
+  <div class="ho-option">
+    <button id="ho_save_btn" class="pure-button">保存</button>
+  </div>
 
-    <div class="ho-option">
-        <trans id="hoMethodOption">ho叫方式：</trans>
-        <label for="m1" class="pure-radio">
-            <input id="m1" type="checkbox" name="methods" value="1">
-            <trans id="hoMethod1">点击</trans>
-
-        </label>    
-        <label for="m2" class="pure-radio">
-            <input id="m2" type="checkbox" name="methods" value="2">
-            <trans id="hoMethod2">点击后</trans>
-        </label>    
-
-<!--         <label for="m3" class="pure-radio">
-            <input id="m3" type="checkbox" name="methods" value="3">
-            右键菜单选项？
-        </label> -->
-
-
-        <label for="m4" class="pure-radio">
-            <input id="m4" type="checkbox" name="methods" value="4">
-            <trans id="hoMethod4">双击</trans>
-        </label>
-    </div>
-
-    <div class="ho-option">
-        <trans id="hoAudioOption">试听与选择：</trans>
-        <br>
-
-        <div style="padding-left: 37px;">
-            ほ:
-            <!-- ho -->
-            <div class="audio-option">
-                <input id="a1" type="checkbox" name="audios" value="1">
-                <div class="audioplay-object">
-                  <div class="audioplay-button"></div>
-                  <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                    <source src="../audio/ho.ogg"  />
-                    Your browser doesn't support &lt;audio&gt; element.
-                  </audio>
-                </div>
-            </div>
-            <div class="audio-option">
-                <input id="a2" type="checkbox" name="audios" value="2">
-                <div class="audioplay-object">
-                  <div class="audioplay-button"></div>
-                  <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                    <source src="../audio/ho_.ogg"  />
-                    Your browser doesn't support &lt;audio&gt; element.
-                  </audio>
-                </div>
-            </div>
-            <div class="audio-option">
-                <input id="a3" type="checkbox" name="audios" value="3">
-                <div class="audioplay-object">
-                  <div class="audioplay-button"></div>
-                  <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                    <source src="../audio/hiho.ogg"  />
-                    Your browser doesn't support &lt;audio&gt; element.
-                  </audio>
-                </div>
-            </div>
-            <div class="audio-option">
-                <input id="a4" type="checkbox" name="audios" value="4">
-                <div class="audioplay-object">
-                  <div class="audioplay-button"></div>
-                  <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                    <source src="../audio/wonderho.ogg"  />
-                    Your browser doesn't support &lt;audio&gt; element.
-                  </audio>
-                </div>
-            </div>
-        </div>
-
-
-        <div>
-        かわいい:
-        <!-- 语气 -->
-        <div class="audio-option">
-            <input id="a5" type="checkbox" name="audios" value="5">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/kuluri.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-
-        <div class="audio-option">
-            <input id="a6" type="checkbox" name="audios" value="6">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/waa.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a7" type="checkbox" name="audios" value="7">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/hehen.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a8" type="checkbox" name="audios" value="8">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/hemn.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a9" type="checkbox" name="audios" value="9">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/lumilumi.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        </div>
-
-        <!-- nanodesu -->
-        <div>
-        なのです:
-        <div class="audio-option">
-            <input id="a10" type="checkbox" name="audios" value="10">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/nanodesu.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a11" type="checkbox" name="audios" value="11">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/sonanodesu.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a12" type="checkbox" name="audios" value="12">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/morning.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        <div class="audio-option">
-            <input id="a13" type="checkbox" name="audios" value="13">
-            <div class="audioplay-object">
-              <div class="audioplay-button"></div>
-              <audio class="audioplay-player" data-apskinspath="../audio/player_skins">
-                <source src="../audio/matsuri.ogg"  />
-                Your browser doesn't support &lt;audio&gt; element.
-              </audio>
-            </div>
-        </div>
-        </div>
-    </div>
-    <div class="ho-option">
-        <button id="ho_save_btn" class="pure-button">保存</button>
-    </div>
-
-<script type="text/javascript" src="../js/audioplay-2.0.0.min.js"></script>
-<script type="text/javascript" src="ho.js"></script>
+  <script src="../js/audioplay-2.0.0.min.js"></script>
+  <script src="ho.js"></script>
 </body>
 </html>
