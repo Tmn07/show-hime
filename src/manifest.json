@@ -1,33 +1,37 @@
 {
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "description": "__MSG_appDesc__",
+   "version": "1.6.0",
+   "default_locale": "zh_CN",
+
    "background": {
       "service_worker": "js/bg.js"
    },
+
    "action": {
       "default_icon": "hime5.png",
       "default_title": "まつり!"
    },
 
-   "content_scripts": [ {
-      "js": [ "js/jquery.min.js", "js/show.js" ],
+   "icons": {
+      "16": "hime5-16.png",
+      "48": "hime5-48.png",
+      "128": "hime5.png"
+   },
+
+   "options_page": "option/index.html",
+
+   "permissions": ["contextMenus", "storage", "tabs"],
+
+   "content_scripts": [{
+      "js": ["js/jquery.min.js", "js/idols.js", "js/show.js"],
       "matches": ["<all_urls>"],
       "run_at": "document_start"
-   } ],
-   "default_locale": "zh_CN",
-   "description": "__MSG_appDesc__",
-   "icons": {
-      "128": "hime5.png",
-      "16": "hime5-16.png",
-      "48": "hime5-48.png"
-   },
-   "manifest_version": 3,
-   "name": "__MSG_appName__",
-   "options_page": "option/index.html",
-   "permissions": [ "contextMenus", "storage", "tabs" ],
-   "version": "1.6.0",
-   "web_accessible_resources": [
-      {
-         "resources": ["data/*.png", "data_gif/*.gif", "audio/*.ogg"],
-         "matches": [ "https://*/*", "http://*/*" ] // ?
-      }
-   ]
+   }],
+
+   "web_accessible_resources": [{
+      "resources": ["data/*.png", "data_gif/*.gif", "audio/*.ogg"],
+      "matches": ["https://*/*", "http://*/*"]
+   }]
 }
